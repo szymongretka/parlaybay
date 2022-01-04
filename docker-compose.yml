@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  managment-app:
+    image: pizza-service-app:latest
+    container_name: pizza-service-app
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
