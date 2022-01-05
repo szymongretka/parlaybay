@@ -9,6 +9,8 @@ import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.Link;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
@@ -37,7 +39,7 @@ public class PizzaController {
     }
 
     @PostMapping(path = "create")
-    public Pizza createPizza(@RequestBody PizzaDTO pizzaDTO) {
+    public Pizza createPizza(@RequestBody @Valid PizzaDTO pizzaDTO) {
         return pizzaService.createPizza(pizzaDTO);
     }
 
